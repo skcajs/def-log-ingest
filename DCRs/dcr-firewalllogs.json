@@ -1,0 +1,101 @@
+{
+    "properties": {
+        "immutableId": "dcr-b2f02321a0ef4ef298bf94c7c4d4b5fe",
+        "dataCollectionEndpointId": "/subscriptions/43703b22-74e0-4d07-87ed-b129b3caeee3/resourceGroups/rg-lab-candidate-dev-001/providers/Microsoft.Insights/dataCollectionEndpoints/dce-firewalllogs",
+        "streamDeclarations": {
+            "Custom-FirewallLogs_CL": {
+                "columns": [
+                    {
+                        "name": "cef_version",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_vendor",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_product",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_version",
+                        "type": "string"
+                    },
+                    {
+                        "name": "signature_id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "severity",
+                        "type": "int"
+                    },
+                    {
+                        "name": "src",
+                        "type": "string"
+                    },
+                    {
+                        "name": "dst",
+                        "type": "string"
+                    },
+                    {
+                        "name": "spt",
+                        "type": "string"
+                    },
+                    {
+                        "name": "dpt",
+                        "type": "string"
+                    },
+                    {
+                        "name": "rt",
+                        "type": "datetime"
+                    },
+                    {
+                        "name": "request",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "dataSources": {},
+        "destinations": {
+            "logAnalytics": [
+                {
+                    "workspaceResourceId": "/subscriptions/43703b22-74e0-4d07-87ed-b129b3caeee3/resourcegroups/rg-lab-candidate-dev-001/providers/microsoft.operationalinsights/workspaces/log-lab-candidate-dev-001",
+                    "workspaceId": "81c3456a-1945-4e41-9a74-7fcf4cf1fc52",
+                    "name": "81c3456a19454e419a747fcf4cf1fc52"
+                }
+            ]
+        },
+        "dataFlows": [
+            {
+                "streams": [
+                    "Custom-FirewallLogs_CL"
+                ],
+                "destinations": [
+                    "81c3456a19454e419a747fcf4cf1fc52"
+                ],
+                "transformKql": "source\n| extend TimeGenerated = todatetime(rt)\n",
+                "outputStream": "Custom-FirewallLogs_CL"
+            }
+        ],
+        "provisioningState": "Succeeded"
+    },
+    "location": "norwayeast",
+    "id": "/subscriptions/43703b22-74e0-4d07-87ed-b129b3caeee3/resourceGroups/rg-lab-candidate-dev-001/providers/Microsoft.Insights/dataCollectionRules/dcr-firewalllogs",
+    "name": "dcr-firewalllogs",
+    "type": "Microsoft.Insights/dataCollectionRules",
+    "etag": "\"1c000461-0000-3c00-0000-68863cb70000\"",
+    "systemData": {
+        "createdBy": "candidate1@defendablelab.onmicrosoft.com",
+        "createdByType": "User",
+        "createdAt": "2025-07-27T14:50:27.8920363Z",
+        "lastModifiedBy": "candidate1@defendablelab.onmicrosoft.com",
+        "lastModifiedByType": "User",
+        "lastModifiedAt": "2025-07-27T14:50:27.8920363Z"
+    },
+    "apiVersion": "2023-03-11"
+}
