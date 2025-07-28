@@ -100,3 +100,14 @@ A list of key improvements and enhancements to take the solution from functional
 
 - **Store Failed Log Batches in Blob Storage**  
   Implement fallback logic to write failed ingestion attempts to Azure Blob Storage for recovery and auditing.
+
+## External Resources Used
+
+The following were used in support of this project:
+
+- **ChatGPT**
+  For generating code, helping to understand the workflow, describing Azure components
+- **Azure Docs**
+  For learning about the infastructure used
+- **Discord Azure Channel**
+  Asking for help
